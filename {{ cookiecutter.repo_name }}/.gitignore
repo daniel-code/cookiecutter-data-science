@@ -76,7 +76,7 @@ target/
 .ipynb_checkpoints/
 
 # exclude datasets from source control by default
-/datasets/
+datasets/
 
 # Mac OS-specific storage files
 .DS_Store
@@ -89,7 +89,7 @@ target/
 .mypy_cache/
 
 # exclude model weights
-/model_weights/
+model_weights/
 
 # exclude logs
-/logs/
+logs/
