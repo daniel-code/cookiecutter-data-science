@@ -84,6 +84,9 @@ class TestCookieSetup(object):
         assert no_curlies(makefile_path)
 
     def test_folders(self):
+        source_name = pytest.param.get('project_name') or 'project_name'
+        source_name = source_name.lower().replace('-', '_').replace(' ', '_')
+
         expected_dirs = [
             'datasets',
             'datasets/external',
@@ -95,12 +98,12 @@ class TestCookieSetup(object):
             'notebooks',
             'reports',
             'reports/figures',
-            'src',
-            'src/data',
-            'src/features',
-            'src/models',
-            'src/utils',
-            'src/visualization',
+            f'{source_name}',
+            f'{source_name}/data',
+            f'{source_name}/features',
+            f'{source_name}/models',
+            f'{source_name}/utils',
+            f'{source_name}/visualization',
         ]
 
         ignored_dirs = [
