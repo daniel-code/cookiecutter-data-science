@@ -70,7 +70,15 @@ The directory structure of your new project looks like this:
 │                         generated with `pip freeze > requirements.txt`
 │
 ├── setup.py           <- makes project pip installable (pip install -e .) so src can be imported
-├── src                <- Source code for use in this project.
+│
+├── train.py           <- Scripts to train models
+│
+├── evaluate.py        <- Scripts to evaluate models
+│
+├── test.py            <- Scripts to predict single sample via trained models
+│
+├── {{ cookiecutter.module_name }}                <- Source code for use in this project.
+│   │
 │   ├── __init__.py    <- Makes src a Python module
 │   │
 │   ├── data           <- Scripts to download or generate data
@@ -83,14 +91,8 @@ The directory structure of your new project looks like this:
 │   │ 
 │   ├── utils          <- Scripts to help train/test pipeline
 │   │
-│   ├── visualization  <- Scripts to create exploratory and results oriented visualizations
-│   │   └── visualize.py
-│   │
-│   ├── train.py       <- Scripts to train models
-│   │
-│   ├── evaluate.py    <- Scripts to evaluate models
-│   │
-│   └── test.py        <- Scripts to predict single sample via trained models
+│   └── visualization  <- Scripts to create exploratory and results oriented visualizations
+│       └── visualize.py
 │
 └── tox.ini            <- tox file with settings for running tox; see tox.readthedocs.io
 ```
