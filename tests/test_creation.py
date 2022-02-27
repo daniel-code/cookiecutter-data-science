@@ -41,27 +41,28 @@ def verify_folders(root, config):
     '''
     expected_dirs = [
         '.',
-        'data',
-        'data/external',
-        'data/interim',
-        'data/processed',
-        'data/raw',
+        'datasets',
+        'datasets/external',
+        'datasets/interim',
+        'datasets/final',
+        'datasets/raw',
         'docs',
-        'models',
+        'model_weights',
         'notebooks',
-        'references',
         'reports',
         'reports/figures',
+        'logs',
         config['module_name'],
         f"{config['module_name']}/data",
         f"{config['module_name']}/features",
         f"{config['module_name']}/models",
         f"{config['module_name']}/visualization",
+        f"{config['module_name']}/utils",
     ]
 
     expected_dirs = [
         #  (root / d).resolve().relative_to(root) for d in expected_dirs
-         Path(d) for d in expected_dirs
+        Path(d) for d in expected_dirs
     ]
 
     existing_dirs = [
@@ -80,10 +81,13 @@ def verify_files(root, config):
         'setup.py',
         ".env",
         ".gitignore",
-        "data/external/.gitkeep",
-        "data/interim/.gitkeep",
-        "data/processed/.gitkeep",
-        "data/raw/.gitkeep",
+        ".flake8",
+        ".pre-commit-config.yaml",
+        ".style.yapf",
+        "datasets/external/.gitkeep",
+        "datasets/interim/.gitkeep",
+        "datasets/final/.gitkeep",
+        "datasets/raw/.gitkeep",
         "docs/Makefile",
         "docs/commands.rst",
         "docs/conf.py",
@@ -91,10 +95,13 @@ def verify_files(root, config):
         "docs/index.rst",
         "docs/make.bat",
         "notebooks/.gitkeep",
-        "references/.gitkeep",
         "reports/.gitkeep",
         "reports/figures/.gitkeep",
-        "models/.gitkeep",
+        "model_weights/.gitkeep",
+        "logs/.gitkeep",
+        "test.py",
+        "train.py",
+        "evaluate.py",
         f"{config['module_name']}/__init__.py",
         f"{config['module_name']}/data/__init__.py",
         f"{config['module_name']}/data/make_dataset.py",
@@ -105,6 +112,7 @@ def verify_files(root, config):
         f"{config['module_name']}/models/predict_model.py",
         f"{config['module_name']}/visualization/__init__.py",
         f"{config['module_name']}/visualization/visualize.py",
+        f"{config['module_name']}/utils/__init__.py",
     ]
 
     # conditional files
@@ -114,7 +122,7 @@ def verify_files(root, config):
     expected_files.append(config["dependency_file"])
 
     expected_files = [
-         Path(f) for f in expected_files
+        Path(f) for f in expected_files
     ]
 
     existing_files = [
