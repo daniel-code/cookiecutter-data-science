@@ -3,7 +3,7 @@
 _A logical, reasonably standardized, but flexible project structure for doing and sharing data science work._
 
 
-Base on [drivendata/cookiecutter-data-science](https://github.com/drivendata/cookiecutter-data-science), and modified by personal experience.
+Base on [drivendata/cookiecutter-data-science](http://drivendata.github.io/cookiecutter-data-science/)
 
 Difference with the original repository
 - add [yapf](https://github.com/google/yapf), python formatter, into project structure
@@ -79,7 +79,7 @@ The directory structure of your new project looks like this:
 │
 ├── {{ cookiecutter.module_name }}                <- Source code for use in this project.
 │   │
-│   ├── __init__.py    <- Makes src a Python module
+│   ├── __init__.py    <- Makes {{ cookiecutter.module_name }} a Python module
 │   │
 │   ├── data           <- Scripts to download or generate data
 │   │   └── make_dataset.py
