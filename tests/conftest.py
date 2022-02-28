@@ -52,7 +52,7 @@ def config_generator():
         c for c in configs if _is_valid(c)
     ]
 
-    for c in configs[2:3]:
+    for c in configs:
         config = dict(c)
         config.update(default_args)
         yield config
