@@ -13,7 +13,7 @@ Please update any scripts/automation you have to append the `-c v1` option,
 which is available now.
 
 For example:
-    cookiecutter -c v1 https://github.com/drivendata/cookiecutter-data-science
+    cookiecutter -c v1 https://github.com/daniel-code/machine-learning-project-template
 =============================================================================
 
     """)
