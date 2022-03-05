@@ -6,14 +6,14 @@ packages = [
     'pip',
     'setuptools',
     'wheel',
-    'click',
-    'yapf',
-    'pre-commit',
 ]
 
 pip_only_packages = [
     'awscli',
     'python-dotenv',
+    'click',
+    'yapf',
+    'pre-commit',
 ]
 
 {% if cookiecutter.dataset_storage.s3 %}
